@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import logo from '../src/assets/images/logo.png';
+import pic from '../src/assets/images/pic.png';
+import {CiTwitter} from 'react-icons/ci';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+<div className='body'>
+  <div className="wrapper">
+    <div className='logo'>
+        <img src={logo}></img>
+  </div>
+  <div className='nav'>
+<a href>HOME</a>
+<a href>ABOUT</a>
+<a href>PORTFOLIO</a>
+<a href>PAGE</a>
+<a href>BLOG</a>
+<a href>CONTACT</a>
+</div>
+</div>
+<div className='banner'>
+  <div className='iamjo'>
+<h3>HEY THERE !</h3>
+<h1>I AM JO BREED</h1>
+<h5>CREATIVE ART DIRECTOR & DESIGNER</h5>
+<CiTwitter/></div>
+  <div className='pic'>
+    <img src={pic}></img>
+  </div>
+</div>
+</div>
+</>
   );
 }
 
