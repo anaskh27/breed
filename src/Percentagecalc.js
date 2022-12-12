@@ -1,34 +1,57 @@
-import "../src/Percentagecalc.scss";
-import React from "react";
+import React, { useState } from "react";
+import "./Percentagecalc.scss";
 
-function Percentagecalc() {
+const Percentagecalc = () => {
+  const [newTask, setNewTask] = useState("");
+  const [todos, setTodos] = useState([]);
+
+  //   console.log(todos, "todos array ====>");
+
+  const addTodo = (e) => {
+    setTodos([
+      ...todos,
+      {
+        id: new Date(),
+        title: newTask,
+      },
+    ]);
+    setNewTask("");
+  };
+
+  console.log(todos, "----");
+
+  const handleDelete = (t) => {
+    const filtered = todos.filter((item) => item.id !== t.id);
+    setTodos(filtered);
+  };
+
   return (
-    <>
-    <div className="main">
-    <div className="imagediv">
+    <div className="main-container">
+      <div className="todo-wrapper">
+        <div className="input-wrapper">
+          <input
+            type={"text"}
+            value={newTask}
+            placeholder="new task"
+            onChange={(e) => setNewTask(e.target.value)}
+          />
+          <button onClick={addTodo}>Add</button>
+        </div>
 
+        {todos.map((task) => {
+          return (
+            <div className="single-todo-wrapper">
+              <h5>{task.title}</h5>
+              <div className="button-wrapper">
+                <button onClick={() => handleDelete(task)}>Delete</button>
+                <button>edit</button>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
-    <div className="form">
-<h2>Sign up</h2><br></br>
-<h3>First Name</h3>
-<input placeholder="TYPE First Name"></input>
-<h3>EMAIL</h3>
-<input placeholder="TYPE Email"></input>
-<h3>Username</h3>
-<input placeholder="TYPE Username"></input>
-<h3>Password</h3>
-<input type="password" placeholder="TYPE Password"></input>
-<h3>Repeat Password</h3>
-<input type="password" placeholder="TYPE Again"></input><br></br>
-<div className="wrapper">
-<input type="checkbox"></input><h4>I agree to term of user</h4>
-</div>
-<button>Sign Up</button>
-<button>Sign In</button>
-    </div>
-    </div>
-    </>
   );
-}
+};
 
 export default Percentagecalc;

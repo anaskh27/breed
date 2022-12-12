@@ -1,35 +1,48 @@
-.main {
-   
-    
-    display: flex;
-   
+* {
+  padding: 0;
+  margin: 0;
 }
-.imagediv {
-    background-image: url(../src/assets/images/young-woman-using-tablet_23-2148055743.webp);
-    image-orientation: cover;
-    height: 100vh;
-    width: 70%;
 
+.main-container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(231, 249, 255);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.form {
-    width:30%;
-    text-align: center;
 
-}
-input {
-    border:0;
-    border-bottom: solid grey 2px;
-    
-}
-.wrapper {
+.todo-wrapper {
+  width: 40%;
+  min-height: 150px;
+  border: 2px solid blueviolet;
+  border-radius: 20px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 20px;
+
+  .input-wrapper {
+    width: 100%;
     display: flex;
-    padding-top: 20px;
-}
-button {
-    color: white;
-    background-image: linear-gradient(purple 70%,blue);
-    border:0;
-    width:70px;
-    height:30px;
-    border-radius: 10%;
+    margin-top: 10px;
+
+    input {
+      width: 100%;
+      padding: 4px 10px;
+    }
+  }
+
+  .single-todo-wrapper {
+    display: flex;
+    justify-content:space-between;
+    margin-top: 10px;
+    border: 1px solid lightgreen;
+    padding: 5px;
+    border-radius: 5px;}
+  
+    .button-wrapper{
+      display: flex;
+      gap:10px;
+    }
+  
 }
